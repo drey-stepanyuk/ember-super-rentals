@@ -1,7 +1,19 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'super-rentals/tests/helpers/module-for-acceptance';
+import Service from '@ember/service';
 
-moduleForAcceptance('Acceptance | list rentals');
+let StubMapsService = Service.extend({
+  getMapElement() {
+    return document.createElement('div');
+  }
+});
+
+moduleForAcceptance('Acceptance | list rentals', {
+  beforeEach() {
+    this.application.register('service:stubMaps', StubMapsService);
+    this.application.inject('component:location-map', 'maps', 'service:stubMaps');
+  }
+});
 
 test('should show rentals as the home page.', (assert) => {
   visit('/');
@@ -44,4 +56,11 @@ test('should filter the list of rentals by city.', (assert) => {
 });
 
 test('should show details for a selected rental.', (assert) => {
+  visit('/rentals');
+  click('a:contains("Grand Old Mansion")');
+  andThen(() => {
+    assert.equal(currentURL(), '/rentals/grand-old-mansion', 'should navigate to show route');
+    assert.equal(find('.show-listing h2').text(), "Grand Old Mansion", 'should list rental title');
+    assert.equal(find('.description').length, 1, 'should list a description of the property');
+  });
 });
