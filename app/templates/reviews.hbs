@@ -13,5 +13,9 @@
         Contact Us
     {{/link-to}}
 </div>
-
+<ul class="results">
+    {{#each model as |singleReview|}}
+        {{review-listing review=singleReview}}
+    {{/each}}
+</ul>
 {{outlet}}

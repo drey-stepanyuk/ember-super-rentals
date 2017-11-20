@@ -40,25 +40,49 @@ export default function() {
     }];
 
     let reviews = [{
-      source: 'Google',
-      user: 'Dave Attenborough',
-      rating: 5,
-      description: "I had a great experience with Super Rentals! They accommodated for a minor booking error and I loved our getaway. I would definitely recommend them to anyone."
+        type: 'reviews',
+        id: 'review-1',
+        attributes: {
+          highlight: 'Great Experience',
+          source: 'Google',
+          firstname: 'Dave',
+          lastname: 'Attenborough',
+          rating: 5,
+          description: "I had a great experience with Super Rentals! They accommodated for a minor booking error and I loved our getaway. I would definitely recommend them to anyone."
+        }
       }, {
-        source: 'Yelp',
-        user: 'Tracy Nelson',
-        rating: 5,
-        description: "We stayed in the grand old mansion with my family for a week and it was splendid."
+        type: 'reviews',
+        id: 'review-2',
+        attributes: {
+          highlight: 'It was Splendid',
+          source: 'Yelp',
+          firstname: 'Tracy',
+          lastname: 'Nelson',
+          rating: 5,
+          description: "We stayed in the grand old mansion with my family for a week and it was splendid."
+        }
       }, {
-        source: 'Google',
-        user: 'Jason Molet',
-        rating: 4.5,
-        description: "I had a great vacation and Super Rentals made it easy to pick the right rental for my wife and I."
+        type: 'reviews',
+        id: 'review-3',
+        attributes: {
+          highlight: 'The Right Rental',
+          source: 'Google',
+          firstname: 'Jason',
+          lastname: 'Molet',
+          rating: 4.5,
+          description: "I had a great vacation and Super Rentals made it easy to pick the right rental for my wife and I."
+        }
       }, {
-        source: 'Yelp',
-        user: 'Anna Williams',
-        rating: 4.7,
-        description: "Prices were average but the experience of getting a rental was super easy and straight-forward."
+        type: 'reviews',
+        id: 'review-4',
+        attributes: {
+          highlight: 'Super Easy',
+          source: 'Yelp',
+          firstname: 'Anna', 
+          lastname: 'Williams',
+          rating: 4.7,
+          description: "Prices were average but the experience of getting a rental was super easy and straight-forward."
+        }
       }
     ];
 
@@ -76,5 +100,10 @@ export default function() {
   // Finds and returns the provided rental from the rental list 
   this.get('/rentals/:id', function (db, request) {
     return { data: rentals.find((rental) => request.params.id === rental.id) };
+  });
+
+  // Returns reviews
+  this.get('/reviews', function () {
+    return { data: reviews };
   });
 }
