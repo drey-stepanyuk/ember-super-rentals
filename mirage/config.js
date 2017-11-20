@@ -39,6 +39,29 @@ export default function() {
       }
     }];
 
+    let reviews = [{
+      source: 'Google',
+      user: 'Dave Attenborough',
+      rating: 5,
+      description: "I had a great experience with Super Rentals! They accommodated for a minor booking error and I loved our getaway. I would definitely recommend them to anyone."
+      }, {
+        source: 'Yelp',
+        user: 'Tracy Nelson',
+        rating: 5,
+        description: "We stayed in the grand old mansion with my family for a week and it was splendid."
+      }, {
+        source: 'Google',
+        user: 'Jason Molet',
+        rating: 4.5,
+        description: "I had a great vacation and Super Rentals made it easy to pick the right rental for my wife and I."
+      }, {
+        source: 'Yelp',
+        user: 'Anna Williams',
+        rating: 4.7,
+        description: "Prices were average but the experience of getting a rental was super easy and straight-forward."
+      }
+    ];
+
   this.get('/rentals', function(db, request) {
     if(request.queryParams.city !== undefined) {
       let filteredRentals = rentals.filter(function(i) {
