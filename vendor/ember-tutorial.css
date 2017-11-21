@@ -347,4 +347,15 @@ p {
  .review-article {
     display: flex;
     flex-direction: column;
+    margin: 1rem .1rem 1rem .1rem;
+    padding: 1rem 3rem 1rem 3rem;
+    background-color: rgb(246, 246, 246);
+ }
+
+ .source-rating {
+     display: flex;
+ }
+
+ .rating {
+     margin-left: 1rem;
  }
