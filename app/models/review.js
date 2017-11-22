@@ -4,6 +4,7 @@ import { computed } from '@ember/object';
 export default DS.Model.extend({
     highlight: DS.attr('string'),
     source: DS.attr('string'),
+    location: DS.attr('string'),
     firstname: DS.attr('string'),
     lastname: DS.attr('string'),
 

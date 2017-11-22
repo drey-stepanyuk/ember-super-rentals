@@ -347,4 +347,7 @@ p {
  .review-article {
     display: flex;
     flex-direction: column;
+    background-color: #f6f6f6;
+    margin: 1rem .1rem 1rem .1rem;
+    padding: 1rem 3rem 1rem 3rem;
  }

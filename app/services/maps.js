@@ -15,13 +15,13 @@ export default Service.extend({
         }
     },
     
-    getMapElement(location) {
+    getMapElement(location, view) {
         let camelizedLocation = camelize(location);
-        let element = this.get(`cachedMaps.${camelizedLocation}`);
+        let element = this.get(`cachedMaps.${camelizedLocation}_${view}`);
         if (!element) {
             element = this.createMapElement();
             this.get('mapUtil').createMap(element, location);
-            this.set(`cachedMaps.${camelizedLocation}`, element);
+            this.set(`cachedMaps.${camelizedLocation}_${view}`, element);
         }
         return element;
     },
