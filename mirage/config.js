@@ -45,6 +45,7 @@ export default function() {
         attributes: {
           highlight: 'Great Experience',
           source: 'Google',
+          location: 'Downtown Charm',
           firstname: 'Dave',
           lastname: 'Attenborough',
           rating: 5,
@@ -56,6 +57,7 @@ export default function() {
         attributes: {
           highlight: 'It was Splendid',
           source: 'Yelp',
+          location: 'Grand Old Mansion',
           firstname: 'Tracy',
           lastname: 'Nelson',
           rating: 5,
@@ -67,6 +69,7 @@ export default function() {
         attributes: {
           highlight: 'The Right Rental',
           source: 'Google',
+          location: 'Downtown Charm',
           firstname: 'Jason',
           lastname: 'Molet',
           rating: 4.5,
@@ -78,9 +81,10 @@ export default function() {
         attributes: {
           highlight: 'Super Easy',
           source: 'Yelp',
+          location: 'Urban Living',
           firstname: 'Anna', 
           lastname: 'Williams',
-          rating: 4.7,
+          rating: 4.2,
           description: "Prices were average but the experience of getting a rental was super easy and straight-forward."
         }
       }
